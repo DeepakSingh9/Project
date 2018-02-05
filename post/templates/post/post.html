@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<p><a href="{% url 'uploadskills' %}">upload video</a></p>
+{% endif %}
+{% if user.post_set.all %}
+    {% for all in user.post_set.all %}
+        <p>{{all.title}}</p>
+        <video width ="320" height="240" controls>
+            <source src ="{{all.video.url}}" type="video/mp4">
+        </video>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

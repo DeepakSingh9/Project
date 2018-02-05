@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" action="{% url 'login' %}">
+    <!--<ul class="form-list">-->
+    {% csrf_token %}
+<input type="text" placeholder="Username" name="username" value=""  class='validate'>
+   <input type="password" placeholder="Password" name="password" value="" class='validate' >
+      <p> <a class="mainn-right-link" href="forgot-password.html">Forgot password?</a></p></li>
+
+    <button type="submit" value="Login" class="btnb btn">Login</button>
+</form>
+
+
+<------------------------------------------------------------------------------------------------------------->
+<h2>Create your new account</h2>
+<form method="POST" action="{% url 'registration' %}">
+<ul class="form-list">
+    {% csrf_token %}
+
+<li class="input-field"><input type="text" id="id_username" name="username"  class="validate" required/><label>Username</label></li>
+<li class="input-field"><input type="password" id="id_password" name="password"  class="validate" required /><label>Password</label></li>
+<li class="input-field"><input type="text" id="id_first_name" name="first_name" class="validate" required/><label>First Name</label></li>
+<li class="input-field"><input type="text" id="id_last_name" name="last_name" class="validate" required/><label>Last name</label></li>
+<li class="input-field"><input type="email" id="id_email" name="email" class="validate" /><label>Email ID</label></li>
+    <li class="input-field"><input type="text" id="id_description" name="description"  class="validate" required/><label>describe who you are</label></li>
+
+    <li class="input-field">   <select>
+      <option value=""  selected>Choose your option</option>
+      <option value="1">Male</option>
+      <option value="2">Female</option>
+      <option value="3">Others</option>
+    </select></li>
+     <li class="input-field textar">
+ <i class="material-icons editbt">mode_edit</i>
+<div class="chips-placeholder"> </div>
+   </li>
+  <!--  <li class="input-field"><input type="text" id="id_keyskills" name="keyskills" class="input" required/><label>Keyskills</label></li>-->
+
+
+
+</ul>
+<div class="row">
+
+<button type="submit" value="Login" class="btnb btn">submit</button>
+
+</div>
+<div class="clear"></div>
+</form>
+
+<a href="{% url 'login' %}">Login</a>
+<a href="{% url 'registration' %}">Signup</a>
+</body>
+</html>

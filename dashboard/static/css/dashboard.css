@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+/**common**/
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+body{font-family: 'Lato', sans-serif;margin:0;padding:0;position:relative;background:Url('../Images/pattern.png');background-repeat:no-repeat;background-size:70%;}
+section{float:left;width:100%;}
+ul,li{list-style-type:none;}
+.outer{width:1200px;margin:auto;}
+h2{font-size:32px;color:#666;margin:0 0 10px 0;font-weight:100 !important;}
+p{color:#666;font-size:16px;margin:0 0 10px 0;}
+p.para{color:#b1b1b1;margin:20px 0;font-size:20px;font-weight:600;}
+.padding{padding:60px 0;}
+.clear{clear:both;}
+header .head{ padding: 1% 2% 1% 2%;
+margin-top: 30px;
+background: #fff;
+box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+height: 118px;}
+header .head img{width: 20%;
+float: left;
+margin-top: 23px;}
+.btn{background-color:#545454;}
+.btn:hover{background-color:#A156EE;}
+.input-field input{margin-bottom:5px;font-family: 'Lato', sans-serif;}
+.input-field label{left:0 !important;}
+.input-field a{color:#9e9e9e;transition:all 0.2s ease;  }
+.input-field p{font-size:15px;}
+.input-field a:hover{color: #A156EE;}
+input:not([type]):focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="search"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){border-bottom: 1px solid #A156EE;
+box-shadow: 0 1px 0 0 #A156EE;}
+input:not([type]):focus:not([readonly]) + label, input[type="text"]:focus:not([readonly]) + label, input[type="password"]:focus:not([readonly]) + label, input[type="email"]:focus:not([readonly]) + label, input[type="url"]:focus:not([readonly]) + label, input[type="time"]:focus:not([readonly]) + label, input[type="date"]:focus:not([readonly]) + label, input[type="datetime-local"]:focus:not([readonly]) + label, input[type="tel"]:focus:not([readonly]) + label, input[type="number"]:focus:not([readonly]) + label, input[type="search"]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label{color:#9e9e9e;}
+
+input:not([type]).valid, input:not([type]):focus.valid, input[type="text"].valid, input[type="text"]:focus.valid, input[type="password"].valid, input[type="password"]:focus.valid, input[type="email"].valid, input[type="email"]:focus.valid, input[type="url"].valid, input[type="url"]:focus.valid, input[type="time"].valid, input[type="time"]:focus.valid, input[type="date"].valid, input[type="date"]:focus.valid, input[type="datetime-local"].valid, input[type="datetime-local"]:focus.valid, input[type="tel"].valid, input[type="tel"]:focus.valid, input[type="number"].valid, input[type="number"]:focus.valid, input[type="search"].valid, input[type="search"]:focus.valid, textarea.materialize-textarea.valid, textarea.materialize-textarea:focus.valid{border-bottom: 1px solid #49db27;
+box-shadow: 0 1px 0 0 #49db27;}
+/**login form**/
+.loginform{float:right;width:48%;}
+.loginform .row{margin-bottom:0;}
+.form-list li{float:left;width: 47%;
+margin-right: 3%;}
+.form-list{width:80%;float:left;margin:0;}
+.loginform .btn{width:20%;float:right;margin-top:25px;}
+.checkline{margin-top:-14px;}
+.green:checked + label:before {
+  top: -2px;
+  left: -3px;
+  width: 12px;
+  height: 20px;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid #49db27; /* You need to change the colour here */
+  border-bottom: 2px solid #49db27; /* And here */
+  -webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  transform: rotate(40deg);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%; }
+.registerform{float:right;width:48%;margin-top:64px;}
+li.textar{width:98%;position:relative;}
+li.textar .editbt{position:absolute;bottom:20px;right:0;color:#eee;}
+li.textar textarea{padding:10px 0 20px 0;}
+.registerform .form-list{width:100%;}
+
+.registerform .btn{float:right;margin-right:12px;margin-top:20px;}
+.videoform{float: left;
+width: 48%;box-shadow:5px 5px 25px 0 rgba(46,61,73,.4);
+margin-top: 60px;}
+.social-icons{float:right;width:40%;}
+.social-icons li{float:right;margin-right:10px;}
+.social-icons li .fa{font-size:16px;color:#666;}
+.social-icons li a:hover .fa{color:#A156EE;}
+footer p{float:left;width:30%;margin-top:10px;}
+footer{margin-top:40px;}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: #d6d6d6;
+  opacity: 1;
+}
+.loginform .input-field .prefix.active{color:#d2d2d2;}
+.loginform .input-field .material-icons{color:#d2d2d2;margin-top:6px;}
+.loginform .input-field p a{margin-left:34px;}
+.loginform .input-field p{margin-left:10px;}
+.select-wrapper ul li{width:100%;}
+.dropdown-content li:hover, .dropdown-content li.active, .dropdown-content li.selected{background-color:#f7f7f7;}
+.select-wrapper input.select-dropdown{color:#979797;}
+.select-wrapper span.caret{color:#e0e0e0;}
+.dropdown-content li > a, .dropdown-content li > span{color:#666;}
+.chip{margin:0 2px 5px 0;}
+.textar input::-moz-placeholder{color:#9e9e9e;}

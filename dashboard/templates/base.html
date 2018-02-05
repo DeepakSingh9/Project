@@ -1,0 +1,68 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title %}{% endblock %}</title>
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+  <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">-->
+    <!--<link href="{% static 'css/dashboard.css' %}" rel="stylesheet">-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+
+
+</head>
+<body>
+
+<header>
+<!--<div class="outer">
+    <div class="head row">
+<img src="../../static/Images/logo.png" />
+
+<div class="loginform">-->
+        <form method="POST" action="">
+    <!--<ul class="form-list">-->
+    {% csrf_token %}
+<input type="text" placeholder="Username" name="username" value=""  class='validate'>
+      <input type="checkbox" class="green" id="remember" checked="checked" />
+   <input type="password" placeholder="Password" name="password" value="" class='validate' >
+      <p> <a class="mainn-right-link" href="forgot-password.html">Forgot password?</a></p></li>
+
+    <button type="submit" value="Login" class="btnb btn">Login</button>
+
+
+
+</form>
+
+</header>
+<!--
+{% if user.is_authenticated %}
+<p>Hello<a href="{% url 'account' pk=user.profile.pk %}">{{user.username}}</a></p>
+
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'login' %}">Login</a>
+<a href="{% url 'registration' %}">Register</a>
+{% endif %}
+-->
+
+    {% block content %}
+    {% endblock %}
+       <!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        var chip = {
+    tag: 'chip content',
+    image: '', //optional
+    id: 1, //optional
+  };
+        $('select').material_select();
+        $('.chips').material_chip();
+         $('.chips-placeholder').material_chip({
+  placeholder: 'Keyskills',
+    secondaryPlaceholder: 'Any Other Skill',
+
+  });
+    });
+</script>-->
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <meta charset="UTF-8">
+
+    <title></title>
+<body>
+<form method="POST" action="">
+    {% csrf_token %}
+    {{profileskillform.as_p}}
+    <input type="submit">
+</form>
+<p>--------------------------------------</p>
+<h4>Not in List?</h4>
+<form method="POST" action="{% url 'skilllistadd' pk=user.pk %}">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="add your skill">
+        <input type="submit">
+</form>
+
+
+<div></div>
+
+
+
+</body>
+{% endblock %}

@@ -1,0 +1,154 @@
+{% load staticfiles %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet"  href="{% static 'css/admin.css' %}"/>
+<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <title>{{user.username}}</title>
+</head>
+
+<body>
+<section class="profile dash-page">
+<div class="dashboard">
+<div class="dash-logo">
+    {% if user.is_authenticated %}
+{% if user.profile.profile_image %}
+<a href="{% url 'account' pk=user.profile.pk %}"><img style="width:100px; border-radius:50%;" src="{{user.profile.profile_image.url}}" alt="not found"></a>
+<a href="{% url 'imageupload' %}">change profile picture</a>
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'imageupload' %}">upload image</a>
+{% endif %}
+    {% endif %}
+</div>
+<ul id="accordion" class="accordion">
+		<li>
+			<div class="link"><i class="fa fa-folder"></i>Group 1<i class="fa fa-chevron-down"></i></div>
+			<ul class="submenu">
+				<li><a href="#">subgroup 1</a></li>
+				<li><a href="#">subgroup 2</a></li>
+				<li><a href="#">subgroup 3</a></li>
+				<li><a href="#">subgroup 4</a></li>
+			</ul>
+		</li>
+		<li class="default open">
+			<div class="link"><i class="fa fa-folder"></i>Group 2<i class="fa fa-chevron-down"></i></div>
+			<ul class="submenu">
+				<li><a href="#">subgroup 1</a></li>
+				<li><a href="#">subgroup 2</a></li>
+				<li><a href="#">subgroup 3</a></li>
+			</ul>
+		</li>
+		<li>
+			<div class="link"><i class="fa fa-folder"></i>Group 3<i class="fa fa-chevron-down"></i></div>
+			<ul class="submenu">
+			    <li><a href="#">subgroup 1</a></li>
+				<li><a href="#">subgroup 2</a></li>
+				<li><a href="#">subgroup 3</a></li>
+				<li><a href="#">subgroup 4</a></li>
+			</ul>
+		</li>
+		<li><div class="link"><i class="fa fa-folder"></i>Group 4<i class="fa fa-chevron-down"></i></div>
+			<ul class="submenu">
+			    <li><a href="#">subgroup 1</a></li>
+				<li><a href="#">subgroup 2</a></li>
+				<li><a href="#">subgroup 3</a></li>
+				<li><a href="#">subgroup 4</a></li>
+			</ul>
+		</li>
+	</ul>
+
+</div>
+
+<div class="dash-cont">
+<div class="dash-head">
+
+
+</div>
+
+<div class="tabs">
+  <div class="tab-2">
+    <label for="tab2-1">One</label>
+    <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+
+    <div class="tab-cont">
+      <h4>Tab One</h4>
+        <div class="vide_list" align="center">
+    {% if not user.post_set.all %}
+                       <span><p>Be So Good They Can't Ignore You !!!</p></span>
+        <p><a href="{% url 'uploadskills' %}">upload your first video {{user.username}} and let the world take a note of you</a></p>
+    {% else %}
+        <p><a href="{% url 'uploadskills' %}">upload more video</a></p>
+        <P>-----------------------------------------------------------------</P>
+        <h2>ALL STUFF</h2>
+        <P>-----------------------------------------------------------------</P>
+        {% for all in user.post_set.all %}
+            <p>{{all.title}}</p>
+            <video width="500" height="500" controls>
+            <source src="{{all.video.url}}" type="video/mp4">
+            </video>
+        {% endfor %}
+    {% endif %}
+</div>
+    </div>
+  </div>
+  <div class="tab-2">
+    <label for="tab2-2">Two</label>
+    <input id="tab2-2" name="tabs-two" type="radio">
+    <div  class="tab-cont">
+      <h4>Tab Two</h4>
+      <p>Quisque sit amet turpis leo. Maecenas sed dolor mi. Pellentesque varius elit in neque ornare commodo ac non tellus. Mauris id iaculis quam. Donec eu felis quam. Morbi tristique lorem eget iaculis consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean at tellus eget risus tempus ultrices. Nam condimentum nisi enim, scelerisque faucibus lectus sodales at.</p>
+    </div>
+  </div>
+  <div class="tab-2">
+    <label for="tab2-3">Three</label>
+    <input id="tab2-3" name="tabs-two" type="radio">
+    <div  class="tab-cont">
+      <h4>Tab Three</h4>
+      <p>Quisque sit amet turpis leo. Maecenas sed dolor mi. Pellentesque varius elit in neque ornare commodo ac non tellus. Mauris id iaculis quam. Donec eu felis quam. Morbi tristique lorem eget iaculis consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean at tellus eget risus tempus ultrices. Nam condimentum nisi enim, scelerisque faucibus lectus sodales at.</p>
+    </div>
+  </div>
+  <div class="tab-2">
+    <label for="tab2-4">Four</label>
+    <input id="tab2-4" name="tabs-two" type="radio">
+    <div  class="tab-cont">
+      <h4>Tab Four</h4>
+      <p>Quisque sit amet turpis leo. Maecenas sed dolor mi. Pellentesque varius elit in neque ornare commodo ac non tellus. Mauris id iaculis quam. Donec eu felis quam. Morbi tristique lorem eget iaculis consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean at tellus eget risus tempus ultrices. Nam condimentum nisi enim, scelerisque faucibus lectus sodales at.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+    $(function () {
+        var Accordion = function (el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+
+            // Variables privadas
+            var links = this.el.find('.link');
+            // Evento
+            links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
+        }
+
+        Accordion.prototype.dropdown = function (e) {
+            var $el = e.data.el;
+            $this = $(this),
+			$next = $this.next();
+
+            $next.slideToggle();
+            $this.parent().toggleClass('open');
+
+            if (!e.data.multiple) {
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            };
+        }
+
+        var accordion = new Accordion($('#accordion'), false);
+    });
+
+
+</script>
+</section>
+</body>
+</html>

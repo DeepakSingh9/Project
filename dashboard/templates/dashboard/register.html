@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title%} registeration {% endblock %}
+
+
+{% block content %}
+
+
+<h2>Create your new account</h2>
+<form method="POST">
+<ul class="form-list">
+    {% csrf_token %}
+
+<li class="input-field"><input type="text" id="id_username" name="username"  class="validate" required/><label>Username</label></li>
+<li class="input-field"><input type="password" id="id_password" name="password"  class="validate" required /><label>Password</label></li>
+<li class="input-field"><input type="text" id="id_first_name" name="first_name" class="validate" required/><label>First Name</label></li>
+<li class="input-field"><input type="text" id="id_last_name" name="last_name" class="validate" required/><label>Last name</label></li>
+<li class="input-field"><input type="email" id="id_email" name="email" class="validate" /><label>Email ID</label></li>
+    <li class="input-field">   <select>
+      <option value=""  selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select></li>
+     <li class="input-field textar">
+ <i class="material-icons editbt">mode_edit</i>
+<div class="chips-placeholder"> </div>
+   </li>
+  <!--  <li class="input-field"><input type="text" id="id_keyskills" name="keyskills" class="input" required/><label>Keyskills</label></li>-->
+
+
+
+</ul>
+<div class="row">
+
+<button type="submit" value="Login" class="btnb btn">submit</button>
+
+</div>
+<div class="clear"></div>
+</form>
+
+
+
+
+<footer>
+<div class="outer">
+
+    <p>&copy;copyright 2017</p>
+
+           <ul class="social-icons">
+        <li><a href="" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+        <li><a href="" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+        <li><a href="" class="social-icon"> <i class="fa fa-rss"></i></a></li>
+        <li><a href="" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+        <li><a href="" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
+        <li><a href="" class="social-icon"> <i class="fa fa-google-plus"></i></a></li>
+           </ul>
+
+</div>
+
+
+
+
+
+</footer>
+{% endblock %}
